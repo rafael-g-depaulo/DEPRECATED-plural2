@@ -1,11 +1,20 @@
 {
   "version": 2,
-  "cli": { "defaultCollection": "@nrwl/next" },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
   "defaultProject": "client",
   "generators": {
-    "@nrwl/react": { "application": { "babel": true } },
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
     "@nrwl/next": {
-      "application": { "style": "styled-components", "linter": "eslint" }
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
     }
   },
   "projects": {
@@ -21,11 +30,16 @@
             "root": "apps/client",
             "outputPath": "dist/apps/client"
           },
-          "configurations": { "production": {} }
+          "configurations": {
+            "production": {}
+          }
         },
         "serve": {
           "executor": "@nrwl/next:server",
-          "options": { "buildTarget": "client:build", "dev": true },
+          "options": {
+            "buildTarget": "client:build",
+            "dev": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "client:build:production",
@@ -35,7 +49,9 @@
         },
         "export": {
           "executor": "@nrwl/next:export",
-          "options": { "buildTarget": "client:build:production" }
+          "options": {
+            "buildTarget": "client:build:production"
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -49,6 +65,13 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/client/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "prod": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "nx run client:serve:production --port \"${PORT:-3000}\""
           }
         }
       }
@@ -66,12 +89,16 @@
             "devServerTarget": "client:serve"
           },
           "configurations": {
-            "production": { "devServerTarget": "client:serve:production" }
+            "production": {
+              "devServerTarget": "client:serve:production"
+            }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"] }
+          "options": {
+            "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"]
+          }
         }
       }
     },
@@ -80,10 +107,16 @@
       "projectType": "application",
       "sourceRoot": "apps/strapi/src",
       "targets": {
-        "serve": { "executor": "@nx-extend/strapi:serve" },
+        "serve": {
+          "executor": "@nx-extend/strapi:serve"
+        },
         "build": {
           "executor": "@nx-extend/strapi:build",
-          "configurations": { "production": { "production": true } }
+          "configurations": {
+            "production": {
+              "production": true
+            }
+          }
         }
       }
     }
