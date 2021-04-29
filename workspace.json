@@ -38,6 +38,7 @@
           "executor": "@nrwl/next:server",
           "options": {
             "buildTarget": "client:build",
+            "proxyConfig": "apps/client/proxy.conf.json",
             "dev": true
           },
           "configurations": {
@@ -71,6 +72,8 @@
           "executor": "@nrwl/workspace:run-commands",
           "outputs": [],
           "options": {
+            "buildTarget": "client:build:production",
+            "proxyConfig": "apps/client/proxy.prod.conf.json",
             "command": "nx run client:serve:production --port \"${PORT:-3000}\""
           }
         }
@@ -108,7 +111,20 @@
       "sourceRoot": "apps/strapi/src",
       "targets": {
         "serve": {
-          "executor": "@nx-extend/strapi:serve"
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn develop",
+            "cwd": "apps/strapi"
+          }
+        },
+        "prod": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "buildTarget": "strapi:build:production",
+            "cwd": "apps/strapi",
+            "command": "yarn start"
+          }
         },
         "build": {
           "executor": "@nx-extend/strapi:build",
