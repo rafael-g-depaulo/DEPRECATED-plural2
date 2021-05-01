@@ -27,9 +27,11 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/architect": "^0.1102.11",
+    "@angular-devkit/core": "^11.2.11",
     "@nrwl/cli": "12.0.8",
-    "@nrwl/nx-cloud": "latest",
     "@nrwl/next": "12.0.8",
+    "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "12.0.8",
     "@nx-extend/strapi": "^1.0.4",
     "core-js": "^3.6.5",
@@ -48,9 +50,11 @@
     "@babel/preset-react": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
     "@nrwl/cypress": "12.0.8",
+    "@nrwl/devkit": "12.0.8",
     "@nrwl/eslint-plugin-nx": "12.0.8",
     "@nrwl/jest": "12.0.8",
     "@nrwl/linter": "12.0.8",
+    "@nrwl/node": "12.0.8",
     "@nrwl/react": "12.0.8",
     "@nrwl/tao": "12.0.8",
     "@nrwl/web": "12.0.8",
@@ -78,6 +82,7 @@
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
+    "tslib": "^2.0.0",
     "typescript": "~4.1.4"
   },
   "engines": {

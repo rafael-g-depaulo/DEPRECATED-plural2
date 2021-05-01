@@ -11,6 +11,7 @@ To build and run an app in production in heroku, you need to set the START_SCRIP
 | App    | BUILD_SCRIPT                     | START_SCRIPT         |
 |--------|----------------------------------|----------------------|
 | client | `nx run client:build:production` | `nx run client:prod` |
+| strapi | `nx run strapi:build:production` | `nx run strapi:prod` |
 
 ## Generate an application
 

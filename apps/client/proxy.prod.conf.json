@@ -1,6 +1,9 @@
 {
   "/strapi": {
-    "target": "http://localhost:3333",
-    "secure": false
+    "target": "http://plural2-strapi-test.herokuapp.com/",
+    "secure": false,
+    "pathRewrite": {
+      "^/strapi": "/"
+    }
   }
 }
