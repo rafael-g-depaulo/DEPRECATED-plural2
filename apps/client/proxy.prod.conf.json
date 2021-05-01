@@ -1,9 +1,9 @@
 {
   "/strapi": {
-    "target": "http://plural2-strapi-test.herokuapp.com/",
+    "target": "http://plural2-strapi-test.herokuapp.com",
     "secure": false,
     "pathRewrite": {
-      "^/strapi": "/"
+      "^/strapi/": "/"
     }
   }
 }

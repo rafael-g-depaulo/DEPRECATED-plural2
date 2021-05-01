@@ -112,7 +112,7 @@
           }
         }
       }
-    },
+    },    
     "strapi": {
       "root": "apps/strapi",
       "projectType": "application",
@@ -123,9 +123,8 @@
           "outputs": [],
           "options": {
             "commands": [
-              "echo \"in theory we should run 'strapi start' instead of the 'strapi develop' that is being called by the following strapi:serve, but for now it's good enough as is\"",
-              "cd apps/strapi && yarn && cd ../..",
-              "nx run strapi:serve"
+              "echo \"starting strapi server...\"",
+              "cd apps/strapi && yarn strapi start; cd ../../"
             ],
             "parallel": false
           }
@@ -138,8 +137,19 @@
           "options": {
             "commands": [
               "echo \"installing strapi dependencies...\"",
-              "cd apps/strapi && yarn && cd ../.."
-            ]
+              "cd apps/strapi && yarn && yarn strapi build; cd ../.."
+            ],
+            "parallel": false
+          }
+        },
+        "install-and-build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run strapi:install",
+              "nx run strapi:build"
+            ],
+            "parallel": false
           }
         },
         "build": {

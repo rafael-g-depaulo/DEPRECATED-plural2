@@ -3,7 +3,7 @@
     "target": "http://localhost:1337",
     "secure": false,
     "pathRewrite": {
-      "^/strapi": "/"
+      "^/strapi/": "/"
     }
   }
 }

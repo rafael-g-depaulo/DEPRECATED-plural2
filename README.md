@@ -8,12 +8,11 @@ This project was generated using [Nx](https://nx.dev).
 
 To build and run an app in production in heroku, you need to set the START_SCRIPT and BUILD_SCRIPT env variables. Below is a table with the values for each for the appropriate apps:
 
-| App    | BUILD_SCRIPT                     | START_SCRIPT         |
-|--------|----------------------------------|----------------------|
-| client | `nx run client:build:production` | `nx run client:prod` |
-| strapi | `nx run strapi:install`          | `nx run strapi:prod` |
+| App    | BUILD_SCRIPT                      | START_SCRIPT         |
+|--------|-----------------------------------|----------------------|
+| client | `nx run client:build:production`  | `nx run client:prod` |
+| strapi | `nx run strapi:install-and-build` | `nx run strapi:prod` |
 
-(in theory the strapi build script should be `nx run strapi:build:production`, but since we are currently using `strapi develop` as a start script no build is necessary)
 ## Generate an application
 
 Run `nx g @nrwl/react:app my-app` to generate an application.
