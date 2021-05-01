@@ -133,6 +133,15 @@
         "serve": {
           "executor": "@nx-extend/strapi:serve"
         },
+        "install": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "echo \"installing strapi dependencies...\"",
+              "cd apps/strapi && yarn && cd ../.."
+            ]
+          }
+        },
         "build": {
           "executor": "@nx-extend/strapi:build",
           "configurations": {
