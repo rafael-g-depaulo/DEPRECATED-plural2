@@ -11,7 +11,7 @@ describe('strapi', () => {
 
     it('should work in prod', () => {
       process.env.NODE_ENV = "production"
-      expect(strapiHost()).toEqual('plural2-strapi-test.herokuapp.com')
+      expect(strapiHost()).toEqual('plural2-strapi.herokuapp.com')
     })
   })
 })
