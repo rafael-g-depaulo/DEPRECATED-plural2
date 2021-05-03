@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { sum } from "utils/test"
+import { sum } from "../utils/test"
 
 const StyledPage = styled.div`
   .page {

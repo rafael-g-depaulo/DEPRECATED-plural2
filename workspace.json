@@ -112,7 +112,7 @@
           }
         }
       }
-    },    
+    },
     "strapi": {
       "root": "apps/strapi",
       "projectType": "application",
@@ -158,6 +158,31 @@
             "production": {
               "production": true
             }
+          }
+        }
+      }
+    },
+    "server-conn-info": {
+      "root": "libs/server-conn-info",
+      "sourceRoot": "libs/server-conn-info/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/server-conn-info/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/server-conn-info"
+          ],
+          "options": {
+            "jestConfig": "libs/server-conn-info/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
