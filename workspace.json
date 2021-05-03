@@ -60,7 +60,6 @@
           "outputs": [],
           "options": {
             "buildTarget": "client:build:production",
-            "proxyConfig": "apps/client/proxy.prod.conf.json",
             "command": "NODE_ENV=\"production\" nx run client:serve:production --port \"${PORT:-3000}\""
           }
         }
