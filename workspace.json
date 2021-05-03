@@ -1,20 +1,11 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
+  "cli": { "defaultCollection": "@nrwl/next" },
   "defaultProject": "client",
   "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
-    },
+    "@nrwl/react": { "application": { "babel": true } },
     "@nrwl/next": {
-      "application": {
-        "style": "styled-components",
-        "linter": "eslint"
-      }
+      "application": { "style": "styled-components", "linter": "eslint" }
     }
   },
   "projects": {
@@ -25,16 +16,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "root": "apps/client",
             "outputPath": "dist/apps/client"
           },
-          "configurations": {
-            "production": {}
-          }
+          "configurations": { "production": {} }
         },
         "serve": {
           "executor": "@nrwl/next:server",
@@ -52,15 +39,11 @@
         },
         "export": {
           "executor": "@nrwl/next:export",
-          "options": {
-            "buildTarget": "client:build:production"
-          }
+          "options": { "buildTarget": "client:build:production" }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/client"
-          ],
+          "outputs": ["coverage/apps/client"],
           "options": {
             "jestConfig": "apps/client/jest.config.js",
             "passWithNoTests": true
@@ -69,9 +52,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/client/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/client/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "prod": {
@@ -80,7 +61,7 @@
           "options": {
             "buildTarget": "client:build:production",
             "proxyConfig": "apps/client/proxy.prod.conf.json",
-            "command": "nx run client:serve:production --port \"${PORT:-3000}\""
+            "command": "NODE_ENV=\"production\" nx run client:serve:production --port \"${PORT:-3000}\""
           }
         }
       }
@@ -98,18 +79,12 @@
             "devServerTarget": "client:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "client:serve:production"
-            }
+            "production": { "devServerTarget": "client:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/client-e2e/**/*.{js,ts}"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"] }
         }
       }
     },
@@ -129,9 +104,7 @@
             "parallel": false
           }
         },
-        "serve": {
-          "executor": "@nx-extend/strapi:serve"
-        },
+        "serve": { "executor": "@nx-extend/strapi:serve" },
         "install": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
@@ -145,20 +118,13 @@
         "install-and-build": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "commands": [
-              "nx run strapi:install",
-              "nx run strapi:build"
-            ],
+            "commands": ["nx run strapi:install", "nx run strapi:build"],
             "parallel": false
           }
         },
         "build": {
           "executor": "@nx-extend/strapi:build",
-          "configurations": {
-            "production": {
-              "production": true
-            }
-          }
+          "configurations": { "production": { "production": true } }
         }
       }
     },
@@ -169,17 +135,11 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/server-conn-info/**/*.ts"
-            ]
-          }
+          "options": { "lintFilePatterns": ["libs/server-conn-info/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/server-conn-info"
-          ],
+          "outputs": ["coverage/libs/server-conn-info"],
           "options": {
             "jestConfig": "libs/server-conn-info/jest.config.js",
             "passWithNoTests": true
@@ -194,19 +154,53 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/jest-utils/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/jest-utils"],
           "options": {
-            "lintFilePatterns": [
-              "libs/jest-utils/**/*.ts"
-            ]
+            "jestConfig": "libs/jest-utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "connect-backoffice": {
+      "root": "libs/connect-backoffice",
+      "sourceRoot": "libs/connect-backoffice/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/connect-backoffice/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/connect-backoffice"],
+          "options": {
+            "jestConfig": "libs/connect-backoffice/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "hooks-use-fetch-api": {
+      "root": "libs/hooks/use-fetch-api",
+      "sourceRoot": "libs/hooks/use-fetch-api/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/hooks/use-fetch-api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/jest-utils"
-          ],
+          "outputs": ["coverage/libs/hooks/use-fetch-api"],
           "options": {
-            "jestConfig": "libs/jest-utils/jest.config.js",
+            "jestConfig": "libs/hooks/use-fetch-api/jest.config.js",
             "passWithNoTests": true
           }
         }

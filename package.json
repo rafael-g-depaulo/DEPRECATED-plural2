@@ -34,6 +34,7 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "12.0.8",
     "@nx-extend/strapi": "^1.0.4",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "next": "10.1.3",
@@ -42,6 +43,7 @@
     "react-is": "17.0.2",
     "regenerator-runtime": "0.13.7",
     "styled-components": "5.2.1",
+    "swr": "^0.5.6",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
@@ -59,6 +61,7 @@
     "@nrwl/tao": "12.0.8",
     "@nrwl/web": "12.0.8",
     "@testing-library/react": "11.2.6",
+    "@types/axios": "^0.14.0",
     "@types/jest": "26.0.8",
     "@types/node": "^15.0.1",
     "@types/react": "17.0.3",

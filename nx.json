@@ -17,10 +17,15 @@
     }
   },
   "projects": {
-    "client": { "tags": [] },
-    "client-e2e": { "tags": [], "implicitDependencies": ["client"] },
-    "strapi": { "tags": [] },
+    "client": { "tags": ["front"] },
+    "client-e2e": {
+      "tags": ["e2e", "test"],
+      "implicitDependencies": ["client"]
+    },
+    "strapi": { "tags": ["back", "backoffice"] },
     "server-conn-info": { "tags": [] },
-    "jest-utils": { "tags": ["test"] }
+    "jest-utils": { "tags": ["test"] },
+    "connect-backoffice": { "tags": [] },
+    "hooks-use-fetch-api": { "tags": ["front", "hooks"] }
   }
 }

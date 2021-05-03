@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@plural2/server-conn-info": ["libs/server-conn-info/src/index.ts"],
-      "@plural2/jest-utils": ["libs/jest-utils/src/index.ts"]
+      "@plural2/jest-utils": ["libs/jest-utils/src/index.ts"],
+      "@plural2/connect-backoffice": ["libs/connect-backoffice/src/index.ts"],
+      "@hooks/useFetchApi": ["libs/hooks/use-fetch-api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
