@@ -186,6 +186,31 @@
           }
         }
       }
+    },
+    "jest-utils": {
+      "root": "libs/jest-utils",
+      "sourceRoot": "libs/jest-utils/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/jest-utils/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/jest-utils"
+          ],
+          "options": {
+            "jestConfig": "libs/jest-utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

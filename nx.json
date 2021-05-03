@@ -20,6 +20,7 @@
     "client": { "tags": [] },
     "client-e2e": { "tags": [], "implicitDependencies": ["client"] },
     "strapi": { "tags": [] },
-    "server-conn-info": { "tags": [] }
+    "server-conn-info": { "tags": [] },
+    "jest-utils": { "tags": ["test"] }
   }
 }

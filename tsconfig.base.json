@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@plural2/server-conn-info": ["libs/server-conn-info/src/index.ts"]
+      "@plural2/server-conn-info": ["libs/server-conn-info/src/index.ts"],
+      "@plural2/jest-utils": ["libs/jest-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
